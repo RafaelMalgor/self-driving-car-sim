@@ -11,8 +11,8 @@ export class Sensor {
     readings: (Intersection | null)[];
     constructor(private car: Car, private rayCount = 5) {
 
-        this.rayLength = 200;
-        this.raySpread = Math.PI / 2;
+        this.rayLength = 350;
+        this.raySpread = Math.PI / 5;
         this.rays = [];
         this.readings = [];
     }

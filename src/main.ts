@@ -56,7 +56,7 @@ function generateAICars(n: number, parent: SmartCar | null = null) {
   }
 
   for (let i = 0; i <= n; i++) {
-    const car = new SmartCar(road.getLineCenter(1), 100, 30, 50, 6, 10, redCarImage);
+    const car = new SmartCar(road.getLineCenter(1), 100, 30, 50, 4, 7, redCarImage);
     if (parent) {
       const clone = JSON.parse(JSON.stringify(parent.getAI())) as NNetwork;
       NNetwork.mutate(clone, 0.5)
@@ -69,7 +69,7 @@ function generateAICars(n: number, parent: SmartCar | null = null) {
 
 function generateTraffic(longestSurvivor: SmartCar, previousTrafficTimestamp: number, lineCount: number) {
   const currentTimestamp = Date.now();
-  if (currentTimestamp - previousTrafficTimestamp > 1000) {
+  if (currentTimestamp - previousTrafficTimestamp > 4000) {
     let greenCarImage = new Image();
     greenCarImage.src = "green_car.png";
     traffic.push(new TrafficCar(road.getLineCenter(Math.floor((Math.random() * lineCount))), longestSurvivor!.y - 4000, 30, 50, Math.floor((Math.random() * 2)), greenCarImage));

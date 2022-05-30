@@ -185,7 +185,7 @@ export class SmartCar extends Car {
         this.startPoint = this.x;
         this.distance = 0;
         this.stoppedAt = Date.now();
-        this.controls = new NNControl(new NNetwork([rayCount, 6, 4]));
+        this.controls = new NNControl(new NNetwork([rayCount, 18, 4]));
         this.sensor = new Sensor(this, rayCount);
         this.speed = 0;
         this.acceleration = 0.1;
